@@ -15,7 +15,7 @@ local function lsp()
 end
 
 M.ui = {
-  theme = "everforest_light",
+  theme = "nightowl",
   tabufline = {
     order = { "treeOffset", "buffers", "tabs" },
   },
