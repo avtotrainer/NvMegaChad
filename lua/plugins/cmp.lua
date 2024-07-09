@@ -1,6 +1,9 @@
 return {
   "hrsh7th/nvim-cmp",
   opts = {
+    completion = {
+      autocomplete = false, -- ავტოკომპლიტის ავტომატური გამოტანის აკრძალვა
+    },
     sources = {
       { name = "copilot" },
       { name = "nvim_lsp" },

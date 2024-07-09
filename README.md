@@ -4,34 +4,35 @@
 ![leader](https://dotfyle.com/le4ker/nvmegachad/badges/leaderkey)
 ![lazy](https://dotfyle.com/le4ker/nvmegachad/badges/plugin-manager)
 
-<p align="center">
-  <img src=".github/images/megaman.jpeg" alt="megaman" />
-</p>
+[Neovim](https://neovim.io/) კონფიგურაცია, რომელიც ბაზირებულია
+[NvChad](https://nvchad.com/) დისტრიბუციაზე. ეს კონფიგურცია მისიმალისტურია
+UI ელემენტების და კლავიშების მალხმობების მიმართ, მაგრამ გვთავაზებს წინასწარ
+გაწყობილ LSP-ების, ფორმატერების, ლინტერების და დებაგერების ფართო სპექტრს,
+ასევე მუშაობს Github Copilot და Markdown preview, რომელთა ჩართვა და გამორთვა
+კლავიატურიდანაა შესაძლებელი.
 
-[Neovim](https://neovim.io/) configuration, based on the
-[NvChad](https://nvchad.com/) distribution. It takes a more minimal approach
-when it comes to UI elements and key mappings, while it offers a wide range of
-preconfigured LSPs, formatters, linters and debuggers,while adding support for
-Github Copilot and Markdown preview.
+მე უპირატესობას ვანიჭებ Codeium უფასო სისტემას, მაგრამ ფასიანი
+Github Copilot-ის შემთხვევაში, მაინც ვფიქრობ, რომ მისი გამოყნება იქნება
+უპრიანი, რადგან ის Github-ის საკუთარი პროდუქტია.
 
-Languages supported: Go, Python, C/C++, Lua, Ruby,
+მხარდაჭერილია ენები: Go, Python, C/C++, Lua, Ruby,
 HTML/CSS/Javascript/Typescript, YAML, Bash, Terraform, TOML, Vimscript, SQL
 
-## Requirements
+## საჭიროებები
 
 - [Neovim 0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
 - [Nerd Font](https://www.nerdfonts.com/)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Terraform](https://www.terraform.io/)
 
-Can be installed in macOS by running `make install`
+macOS-ზე უნდა დაინსტალირდეს `make install`-ს გამოყენებით (მე არ გამიტესტია)
 
-## Preview
+## გადახედვა
 
-> Install requires Neovim 0.9+. Always review the code before installing a
-> configuration.
+> ინსტალაცია მოითხოვს Neovim 0.9+. კონფიგურაციის ინსტალაციამდე ეს ყოველთვის
+> გადაამოწმეთ.
 
-Clone the repository and install the plugins:
+რეპოზიტორის ქლონირება და პლაგინების ინსტალაცია:
 
 ```sh
 git clone git@github.com:le4ker/NvMegaChad ~/.config/le4ker/NvMegaChad
@@ -39,22 +40,56 @@ make install # works only on macOS
 NVIM_APPNAME=le4ker/NvMegaChad/ nvim
 ```
 
-## Install
+## ინსტალაცია
 
-Remove existing config:
+ამოიღე არსებული კონფიგი:
 
 ```sh
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 ```
 
-Download the config and install the dependencies:
+მე ასევე გირჩევდით:
+
+```sh
+rm -rf ~/.cache/nvim
+rm -rf ~/.local/state/nvim
+```
+
+რეპოზიტორის ჩემს ვარიანტს მოყვება სკრიპტი `remove_nvim_config` და შეგიძლიათ
+გამოიყენოთ, ეს დაგიზოგავთ ბევრ დროს, სანამ თქვენ neovim-ის საინსტალაციო
+ექსპერიმენტებს დაასრულებთ
+
+დაქლონეთ რეპოზიტორი და დააყენეთ პლაგინები,
 
 ```sh
 git clone https://github.com/le4ker/NvMegaChad ~/.config/nvim
 make install # works only on macOS
 nvim
 ```
+
+ჩემი რეკომენდაციით ინსტალაციის შემდგომ შეასრლეთ
+
+`:MasonInstallAll` და მერე `:Lazy sync`
+
+## მე რა შვევცვალე
+
+1. გავთიშე ავტოკომპლიტის ავტომატური გამოხტომა, გამოდის `Ctrl + Space`-ზე
+2. რედაქტორის ვერტიკალური ხაზი დავსვი 80 სიმბოლოზე მხოლოდ MarkDown
+   ფაილებისათვის, რადგან ლინტერმა მოითხოვა ასე, მეც დავეთანხმე და გადავაკეთე.
+   ზოგადად ვერტიკალური ხაზის მდებარეობა 100 სიმბოლოზე განსაზღვრულია
+   `lue/options.lua` ფაილში `colorcolumn = "100"`
+3. გავწერე ჩემი კლავიატურის მეპინგი, გარდა Insert რეჟიმისა, ქართულ და
+   რუსულ სიმბოლოებს შევუსაბამე ინგლისური სიმბოლოები ეს საშუალებას იძლევა
+   vim ბრძანებების შესასრულებლად, ყოველ ჯერზე აღარ გადავრთო კლავიატურა ქართულიდან
+   ინგლისურზე, რასაც საკმაო დრო მიაქვს და ტემპსაც აგდებს. ვისაც მრავალენოვან
+   ტექსტებზე აქვს სამუშაო, მათ ეს გამოადგებათ, თუმცა აღნიშნული მეპინგი მე
+   მორგებული მაქვს ქართულ დვრორაკზე, რაც ქართულ კლავიატურებზე არაა პოპულარული.
+   ფაილში ჩახედვით უცბად მიხვდებით, როგორ უნდა მოაწყოთ თქვენი კლავიატურის
+   შესაბამისად, ვფიქრობ ნებიმიერმა უნდა გაართვას თავი.
+   ეს ფაილი არის `lua/configs/mymappings.lua` ფაილში.
+
+Download the config and install the dependencies:
 
 ## Language Servers
 

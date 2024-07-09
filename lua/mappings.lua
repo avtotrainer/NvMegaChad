@@ -122,3 +122,5 @@ map("n", "<leader>cp", function()
   end
   vim.g.copilot_enabled = not vim.g.copilot_enabled
 end, { desc = "General Toggle Copilot" })
+
+require "configs.mymappings"
