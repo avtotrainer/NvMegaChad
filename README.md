@@ -35,9 +35,9 @@ macOS-ზე უნდა დაინსტალირდეს `make install`
 რეპოზიტორის ქლონირება და პლაგინების ინსტალაცია:
 
 ```sh
-git clone git@github.com:le4ker/NvMegaChad ~/.config/le4ker/NvMegaChad
+git clone git@github.com:avtotrainer/NvMegaChad ~/.config/avtotrainer/NvMegaChad
 make install # works only on macOS
-NVIM_APPNAME=le4ker/NvMegaChad/ nvim
+NVIM_APPNAME=avtotraner/NvMegaChad/ nvim
 ```
 
 ## ინსტალაცია
@@ -63,7 +63,7 @@ rm -rf ~/.local/state/nvim
 დაქლონეთ რეპოზიტორი და დააყენეთ პლაგინები,
 
 ```sh
-git clone https://github.com/le4ker/NvMegaChad ~/.config/nvim
+git clone https://github.com/avtotrainer/NvMegaChad ~/.config/nvim
 make install # works only on macOS
 nvim
 ```
