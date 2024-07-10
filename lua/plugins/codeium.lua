@@ -1,4 +1,4 @@
 return {
-  "Extrafunction/codeium.vim",
+  "Exafunction/codeium.vim",
   lazy = false,
 }
