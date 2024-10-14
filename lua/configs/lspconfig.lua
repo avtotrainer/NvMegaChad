@@ -45,6 +45,14 @@ lspconfig.pyright.setup {
   capabilities = capabilities,
   settings = {
     python = {
+      pythonPath = function()
+        local venv_path = vim.fn.getcwd() .. "/.venv/bin/python"
+        if vim.fn.executable(venv_path) == 1 then
+          return venv_path
+        else
+          return "/usr/bin/python3"
+        end
+      end,
       analysis = {
         extraPaths = {
           "global_helpers",
